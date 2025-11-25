@@ -42,7 +42,6 @@ O projeto segue a arquitetura de camadas (Bronze, Silver, Gold) para garantir qu
     *   *Por que?* Garante que o ambiente rode igual em qualquer máquina.
 *   **Linguagens:**
     *   **SQL:** Será a linguagem principal para transformação (Silver/Gold). É universal, performático e fácil de auditar.
-    *   **Python:** Será utilizado **apenas se necessário** para casos específicos (ex: conectar em uma API complexa que o Hop não suporte nativamente ou scripts de automação externa). Para o "grosso" do ETL, manteremos no SQL/Hop para reduzir complexidade.
 
 ## 🚀 Como Rodar
 
