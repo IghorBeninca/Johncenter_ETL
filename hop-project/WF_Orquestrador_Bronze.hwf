@@ -26,7 +26,7 @@
       <repeat>N</repeat>
       <schedulerType>0</schedulerType>
       <weekDay>1</weekDay>
-      <parallel>N</parallel>
+      <parallel>Y</parallel>
       <xloc>880</xloc>
       <yloc>272</yloc>
       <attributes_hac/>
