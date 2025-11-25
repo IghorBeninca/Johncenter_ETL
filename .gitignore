@@ -1,0 +1,21 @@
+# Hop
+hop-logs/
+hop-config/hop-config.json
+hop-project/metadata/
+!hop-project/metadata/workflow-run-configuration/
+!hop-project/metadata/pipeline-run-configuration/
+
+# Docker / Database
+postgres_data/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log

@@ -1,0 +1,62 @@
+Lista Mestra Final (Nosso Projeto Completo)
+Agora sim! Juntando todas as 4 queries que você me enviou, aqui está a lista completa e consolidada de todas as 29 tabelas e views que precisamos trazer para a nossa camada de Staging (stg_) para satisfazer todas as suas regras de negócio.
+
+(Os 3 novos itens estão em negrito)
+
+ped_vda (Já fizemos! ✅)
+
+it_pedv (Já fizemos! ✅)
+
+categprd (Já fizemos! ✅)
+
+cliente (Já fizemos! ✅)
+
+coligacao (Já fizemos! ✅)
+
+end_cli (Já fizemos! ✅)
+
+equipe (Já fizemos! ✅)
+
+evento (Já fizemos! ✅)
+
+fabric (Já fizemos! ✅)
+
+fila (Já fizemos! ✅)
+
+fornec (Já fizemos! ✅)
+
+gerencia (Já fizemos! ✅)
+
+grupocli (Já fizemos! ✅)
+
+icm_prod (Já fizemos! ✅)
+
+it_rom (Já fizemos! ✅)
+
+linha (Já fizemos! ✅)
+
+nota (Já fizemos! ✅)
+
+motor (Já fizemos! ✅)
+
+orig_sac (Já fizemos! ✅)
+
+orig_sac_sub (Já fizemos! ✅)
+
+produto (Já fizemos! ✅)
+
+ram_ativ (Já fizemos! ✅)
+
+romaneio (Já fizemos! ✅)
+
+sac (Já fizemos! ✅)
+
+secao (Já fizemos! ✅)
+
+setor (Já fizemos! ✅)
+
+situacao_sac (Já fizemos! ✅)
+
+vendedor (Já fizemos! ✅)
+
+vi_verba_ab_vend (View) lc_vend (Já fizemos! ✅)

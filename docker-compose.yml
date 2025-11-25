@@ -1,0 +1,51 @@
+# Versão do Docker Compose
+
+# Definição dos nossos serviços (contêineres)
+services:
+
+  # 1. Nosso Data Warehouse PostgreSQL
+  postgres-dw:
+    image: postgres:14-alpine # Usamos uma imagem leve do Postgres
+    container_name: postgres-dw
+    hostname: postgres-dw
+    # Variáveis de ambiente para criar o banco e o usuário
+    environment:
+      POSTGRES_USER: hopuser # Usuário que o Hop usará para conectar
+      POSTGRES_PASSWORD: hoppass # Senha deste usuário
+      POSTGRES_DB: dw_postgres # Nome do nosso banco de dados do DW
+    ports:
+      - "5432:5432" # Expõe a porta do Postgres para o seu computador (opcional)
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data # Garante que os dados não se percam
+    restart: unless-stopped
+
+  # 2. O Apache Hop (Interface Web)
+  hop-web:
+    image: apache/hop-web:latest # Imagem oficial do Hop Web
+    container_name: hop-web
+    hostname: hop-web
+    # Variáveis de ambiente para configurar o Hop
+    environment:
+      HOP_SERVER_HOSTNAME: hop-web
+      HOP_SERVER_PORT: 8080
+      # O Hop precisa de um local para salvar seus projetos (pipelines, workflows)
+      # Vamos usar uma pasta local chamada 'hop-project'
+      HOP_PROJECT_FOLDER: /files/project
+      HOP_PROJECT_NAME: Johncenter-etl
+      HOP_ENVIRONMENT_NAME: desenvolvimento
+      HOP_ENVIRONMENT_CONFIG_FILE_NAME_PATHS: /files/config/dev-config.json
+    ports:
+      - "8080:8080" # Acessaremos o Hop pelo navegador em localhost:8080
+    volumes:
+      # Mapeia pastas locais para dentro do contêiner
+      - ./hop-project:/files/project # Nossos projetos Hop
+      - ./hop-config:/files/config # Nossas configurações de ambiente
+      - ./hop-plugins:/files/plugins # Para plugins extras (ex: drivers de banco)
+      - ./hop-logs:/files/logs # Onde os logs serão salvos
+    depends_on:
+      - postgres-dw # Garante que o Hop só inicie depois do Postgres
+    restart: unless-stopped
+
+# Definição dos volumes (pastas) que usamos
+volumes:
+  postgres_data:
