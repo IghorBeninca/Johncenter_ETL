@@ -4,6 +4,7 @@ hop-config/hop-config.json
 hop-project/metadata/
 !hop-project/metadata/workflow-run-configuration/
 !hop-project/metadata/pipeline-run-configuration/
+!hop-project/metadata/rdbms/
 
 # Docker / Database
 postgres_data/
